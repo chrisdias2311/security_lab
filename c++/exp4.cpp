@@ -57,7 +57,5 @@ int main(){
     double m = fmod(pow(c, d), n);
     cout<<"Decrypted message is: "<<m<<endl;
 
-
-
     return 0;
 }

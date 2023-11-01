@@ -56,7 +56,7 @@ int main() {
     for (int i = 0; i < 26; i++) {
         char letter = char(i + 97);\
         auto it  = find(letters.begin(), letters.end(), letter);
-        if (letter != 'j' && it==letters.end()) { // Skip 'j'
+        if (letter != 'j' && it==letters.end()) { // Skip 'j'  and didn't find the letter in the vector
             letters.push_back(letter);
         }
     }
@@ -68,7 +68,6 @@ int main() {
         }
     }
 
-    map<string, string> cipher;
     vector<string> duets;
 
     for(int i=0; i<plainText.size(); i++){
@@ -78,10 +77,10 @@ int main() {
             plainText[i] = 'i';
         }
 
-        if(i==plainText.size()-1){
+        if(i==plainText.size()-1){       //Only one letter left at the end of the plain text
             temp_duet += plainText[i];
             temp_duet += 'z';
-        }else if(plainText[i]==plainText[i+1]){
+        }else if(plainText[i]==plainText[i+1]){   //Two same letters
             temp_duet += plainText[i];
             temp_duet += 'z';
             i++;
@@ -96,21 +95,6 @@ int main() {
 
     string encryptedText = playFair_Excrypt(duets, baseVector);
     cout<<"Encrypted Text: "<<encryptedText<<endl;
-
-
-    //Display the duets
-    // cout<<"display The duets:"<<endl;
-    // for(auto i: duets){
-    //     cout<<i<<" ";
-    // }
-
-    //Display the matrix
-    // for (int i = 0; i < 5; i++) {
-    //     for (int j = 0; j < 5; j++) {
-    //         cout << baseVector[i][j] << " ";
-    //     }
-    //     cout << endl;
-    // }
 
     return 0;
 }
