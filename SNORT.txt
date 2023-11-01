@@ -1,0 +1,7 @@
+Snort -V   (Small desc about Snort)
+Snort -v   (large desc)
+
+Snort -vd   (For packet tracing)
+Snort -W    (TO checK if there are any syntax/semantic errors in the packts)
+Snort -dev -l C:\Snort\log   (Stores the Hdetails of incoming packets)
+Snort -dev -l C:\Snort\log -h ipaddress/24 -c snort.conf      (Log all the configuration files)
